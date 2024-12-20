@@ -1,3 +1,3 @@
 
-require('lua/default-settings')
-require('lua/lazy-bootstrap')
+require('default-settings')
+require('lazy-bootstrap')

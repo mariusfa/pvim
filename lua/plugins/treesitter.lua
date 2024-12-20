@@ -3,7 +3,10 @@
 local opts = {
 	ensure_installed = {
 		'lua',
-		'markdown'
+		'markdown',
+		'go',
+		'typescript',
+		'tsx',
 	},
 	auto_install = true,
 }
