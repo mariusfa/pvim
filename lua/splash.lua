@@ -1,5 +1,11 @@
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
+		-- 1. Check if we're editing a commit message
+		local filename = vim.fn.expand("%:t") -- e.g. "COMMIT_EDITMSG"
+		if filename == "COMMIT_EDITMSG" then
+			-- If it's a commit message, do nothing (skip splash)
+			return
+		end
 		local logo_lines = {
 			[[███████╗██╗  ██╗██╗████████╗███████╗██╗     ██╗     ██╗     ██╗]],
 			[[██╔════╝██║  ██║██║╚══██╔══╝██╔════╝██║     ██║     ██║     ██║]],
