@@ -1,9 +1,14 @@
-# pvim
+# PVIM
 Personal neovim config
 
-# Git clone
+## Git clone
 ```bash
-git clone git@github.com:mariusfa/kickstart.nvim.git ~/.config/nvim
+git clone git@github.com:mariusfa/pvim.git ~/.config/nvim
+```
+
+## Clean nvim state
+```bash
+rm -rf ~/.local/share/nvim ~/.local/state/nvim ~/.cache/nvim
 ```
 
 ## Logo generator
