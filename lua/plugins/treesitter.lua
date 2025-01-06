@@ -7,6 +7,7 @@ local opts = {
 		"go",
 		"typescript",
 		"tsx",
+		"html",
 	},
 	auto_install = true,
 }

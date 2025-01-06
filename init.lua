@@ -1,3 +1,3 @@
 require("default-settings")
--- require('splash')
+-- require("splash")
 require("lazy-bootstrap")
