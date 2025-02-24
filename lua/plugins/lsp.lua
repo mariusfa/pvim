@@ -106,7 +106,8 @@ return {
 				root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 			},
 			tailwindcss = {},
-
+			jdtls = {},
+			kotlin_language_server = {},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -127,6 +128,7 @@ return {
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
 			"prettier", -- Used to format JavaScript, TypeScript, etc.
+			"ktfmt", -- Used to format Kotlin code
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -4,7 +4,9 @@ local function config()
 	pcall(require("telescope").load_extension, "ui-select")
 
 	local builtin = require("telescope.builtin")
-	vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search Files" })
+	vim.keymap.set("n", "<leader>sf", function()
+		builtin.find_files({ path_display = { "filename_first" } })
+	end, { desc = "Search Files" })
 	vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search Grep" })
 	vim.keymap.set("n", "<leader>,", builtin.buffers, { desc = "Search Buffers" })
 end

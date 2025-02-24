@@ -27,10 +27,18 @@ return {
 			json = { "prettier" },
 			go = { "gofmt" },
 			rust = { "rustfmt" },
+			kotlin = { "ktfmt" },
 		},
 		format_on_save = {
 			lsp_fallbak = true,
 			timeout_ms = 500,
+		},
+		formatters = {
+			ktfmt = {
+				prepend_args = function(self, ctx)
+					return { "--kotlinlang-style" }
+				end,
+			},
 		},
 	},
 }

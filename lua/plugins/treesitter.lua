@@ -8,6 +8,8 @@ local opts = {
 		"typescript",
 		"tsx",
 		"html",
+		"java",
+		"kotlin",
 	},
 	auto_install = true,
 }

@@ -1,4 +1,4 @@
--- Fixes tsx comments
+-- -- Fixes tsx comments
 return {
 	"folke/ts-comments.nvim",
 	opts = {},
