@@ -10,35 +10,74 @@ local function getTypescriptFormatter()
 	return { "deno_fmt" }
 end
 
+local function formatOnSave()
+	if vim.g.autoformat then
+		print("Autoformat enabled")
+		return { timeout_ms = 500, lsp_format = "fallback" }
+	end
+	print("Autoformat disabled")
+end
+
 return {
 	"stevearc/conform.nvim",
-	version = "v8.2.0",
+	version = "v9.0.0",
 	event = "BufWritePre",
 	cmd = "ConformInfo",
 	keys = {
 		{ "<leader>cf", format, desc = "Format" },
 	},
-	opts = {
-		formatters_by_ft = {
-			lua = { "stylua" },
-			typescript = getTypescriptFormatter(),
-			-- typescript = { "deno_fmt", "prettier", stop_after_first = true },
-			typescriptreact = { "prettier" },
-			json = { "prettier" },
-			go = { "gofmt" },
-			rust = { "rustfmt" },
-			kotlin = { "ktfmt" },
-		},
-		format_on_save = {
-			lsp_fallbak = true,
-			timeout_ms = 500,
-		},
-		formatters = {
-			ktfmt = {
-				prepend_args = function(self, ctx)
-					return { "--kotlinlang-style" }
-				end,
+	config = function()
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				typescript = getTypescriptFormatter,
+				typescriptreact = { "prettier" },
+				json = { "prettier" },
+				go = { "gofmt" },
+				rust = { "rustfmt" },
+				kotlin = { "ktfmt" },
 			},
-		},
-	},
+			format_on_save = function(bufnr)
+				if vim.g.autoformat then
+					print("Autoformat enabled")
+					return { timeout_ms = 500, lsp_format = "fallback" }
+				end
+				print("Autoformat disabled")
+			end,
+			formatters = {
+				ktfmt = {
+					prepend_args = function(self, ctx)
+						return { "--kotlinlang-style" }
+					end,
+				},
+			},
+		})
+	end,
+	-- opts = {
+	-- 	formatters_by_ft = {
+	-- 		lua = { "stylua" },
+	-- 		typescript = getTypescriptFormatter(),
+	-- 		-- typescript = { "deno_fmt", "prettier", stop_after_first = true },
+	-- 		typescriptreact = { "prettier" },
+	-- 		json = { "prettier" },
+	-- 		go = { "gofmt" },
+	-- 		rust = { "rustfmt" },
+	-- 		kotlin = { "ktfmt" },
+	-- 	},
+	--
+	-- 	format_on_save = function(bufnr)
+	-- 		if vim.g.autoformat then
+	-- 			print("Autoformat enabled")
+	-- 			return { timeout_ms = 500, lsp_format = "fallback" }
+	-- 		end
+	-- 		print("Autoformat disabled")
+	-- 	end,
+	-- 	formatters = {
+	-- 		ktfmt = {
+	-- 			prepend_args = function(self, ctx)
+	-- 				return { "--kotlinlang-style" }
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- },
 }
