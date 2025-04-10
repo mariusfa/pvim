@@ -21,6 +21,7 @@ return {
 
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+				map("gi", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 
 				map("<leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
