@@ -25,6 +25,16 @@ return {
 
 				map("<leader>cr", vim.lsp.buf.rename, "[R]e[n]ame")
 				map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
+				map("<leader>co", function()
+					vim.lsp.buf.code_action({
+						-- only run the "source.organizeImports" action
+						context = {
+							only = { "source.organizeImports" },
+						},
+						-- apply immediately (skip the selection window)
+						apply = true,
+					})
+				end, "[C]ode [O]rganize Imports")
 
 				-- The following two autocommands are used to highlight references of the
 				-- word under your cursor when your cursor rests there for a little while.
