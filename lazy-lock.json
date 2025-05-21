@@ -8,7 +8,7 @@
   "copilot.vim": { "branch": "release", "commit": "d1e8429bef7f7709586886b0a23a46fbecc685c4" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "fidget.nvim": { "branch": "main", "commit": "d9ba6b7bfe29b3119a610892af67602641da778e" },
-  "gitsigns.nvim": { "branch": "main", "commit": "ee0606259ee5d5dd40398be26755048e8965086e" },
+  "gitsigns.nvim": { "branch": "main", "commit": "392b9da4abebe9bee11b66dfdad82e0234bac4c2" },
   "hurl.nvim": { "branch": "main", "commit": "b211cceb591b04b1bcaa3d7f81e3ef65207221ba" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "ce0e87c0be12e7c48296a7513e90430e3eac7f24" },

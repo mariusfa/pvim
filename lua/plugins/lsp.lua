@@ -111,12 +111,12 @@ return {
 			gopls = {},
 			rust_analyzer = {},
 			ts_ls = {
-				root_dir = nvim_lsp.util.root_pattern("package.json"),
-				single_file_support = false,
+				-- root_dir = nvim_lsp.util.root_pattern("package.json"),
+				-- single_file_support = false,
 			},
-			denols = {
-				root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-			},
+			-- denols = {
+			-- 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+			-- },
 			tailwindcss = {},
 			jdtls = {},
 			kotlin_language_server = {},
