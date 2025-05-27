@@ -1,26 +1,24 @@
 -- Treesitter = syntax highlights
-
-local opts = {
-	ensure_installed = {
-		"lua",
-		"markdown",
-		"go",
-		"typescript",
-		"tsx",
-		"html",
-		"java",
-		"kotlin",
-	},
-	auto_install = true,
-}
-
-local function config()
-	require("nvim-treesitter.configs").setup(opts)
-end
-
-return {
+return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
-	tag = "v0.9.3",
 	build = ":TSUpdate",
-	config = config,
+	main = "nvim-treesitter.configs", -- Sets main module to use for opts
+	opts = {
+		ensure_installed = {
+			"lua",
+			"markdown",
+			"go",
+			"typescript",
+			"tsx",
+			"html",
+			"java",
+			"kotlin",
+		},
+		-- Autoinstall languages that are not installed
+		auto_install = true,
+		highlight = {
+			enable = true,
+		},
+		indent = { enable = true },
+	},
 }
