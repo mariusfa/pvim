@@ -9,6 +9,7 @@ return { -- Highlight, edit, and navigate code
 			"markdown",
 			"go",
 			"typescript",
+			"diff",
 			"tsx",
 			"html",
 			"java",
