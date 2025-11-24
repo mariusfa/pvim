@@ -14,6 +14,7 @@ return { -- Highlight, edit, and navigate code
 			"html",
 			"java",
 			"kotlin",
+			"python",
 		},
 		-- Autoinstall languages that are not installed
 		auto_install = true,

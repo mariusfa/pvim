@@ -36,6 +36,7 @@ return {
 				go = { "gofmt" },
 				rust = { "rustfmt" },
 				kotlin = { "ktfmt" },
+				python = { "black" },
 			},
 			format_on_save = function(bufnr)
 				if vim.g.autoformat then

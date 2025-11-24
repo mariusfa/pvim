@@ -120,6 +120,7 @@ return {
 			tailwindcss = {},
 			jdtls = {},
 			kotlin_language_server = {},
+			basedpyright = {},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -141,6 +142,7 @@ return {
 			"stylua", -- Used to format Lua code
 			"prettier", -- Used to format JavaScript, TypeScript, etc.
 			"ktfmt", -- Used to format Kotlin code
+			"black", -- Used to format Python code
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
