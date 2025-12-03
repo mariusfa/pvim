@@ -1,19 +1,22 @@
 local function config()
-	-- -- Enable Telescope extensions if they are installed
+	require("telescope").setup({
+		defaults = {
+			path_display = { "filename_first" },
+		},
+	})
+
 	pcall(require("telescope").load_extension, "fzf")
 	pcall(require("telescope").load_extension, "ui-select")
 
 	local builtin = require("telescope.builtin")
-	vim.keymap.set("n", "<leader>sf", function()
-		builtin.find_files({ path_display = { "filename_first" } })
-	end, { desc = "Search Files" })
+	vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search Files" })
 	vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search Grep" })
 	vim.keymap.set("n", "<leader>,", builtin.buffers, { desc = "Search Buffers" })
 end
 
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.8",
+	tag = "v0.1.9",
 	event = "VimEnter",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
