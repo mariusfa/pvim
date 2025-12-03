@@ -6,7 +6,15 @@ return {
 	version = "v1.9.0",
 	init = function()
 		require("catppuccin").setup({
-			hightlight_overrides = {
+			integrations = {
+				neotree = true,
+			},
+			highlight_overrides = {
+				latte = function(colors)
+					return {
+						NeoTreeCursorLine = { bg = colors.surface1 },
+					}
+				end,
 				mocha = function(colors)
 					local overrides = {
 						-- Tabline overrides

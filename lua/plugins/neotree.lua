@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	version = "3.27",
+	version = "3.38.0",
 	opts = {
 		popup_border_style = "rounded",
 		window = {
