@@ -118,7 +118,6 @@ return {
 			-- 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 			-- },
 			tailwindcss = {},
-			jdtls = {},
 			kotlin_language_server = {},
 			basedpyright = {},
 			lua_ls = {
