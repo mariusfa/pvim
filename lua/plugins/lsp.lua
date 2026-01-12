@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	version = "v2.1.0",
+	version = "v2.5.0",
 	dependencies = {
 		{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
 		"williamboman/mason-lspconfig.nvim",
@@ -118,7 +118,6 @@ return {
 			-- 	root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 			-- },
 			tailwindcss = {},
-			kotlin_language_server = {},
 			basedpyright = {},
 			lua_ls = {
 				settings = {
@@ -157,5 +156,11 @@ return {
 				end,
 			},
 		})
+
+		-- Kotlin LSP (JetBrains) - manuelt installert i ~/opt/kotlin-lsp
+		-- vim.lsp.enable("kotlin_lsp")
+		-- vim.lsp.config("kotlin_lsp", {
+		-- 	single_file_support = false,
+		-- })
 	end,
 }

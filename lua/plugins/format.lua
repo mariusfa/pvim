@@ -35,7 +35,8 @@ return {
 				json = { "prettier" },
 				go = { "gofmt" },
 				rust = { "rustfmt" },
-				kotlin = { "ktfmt" },
+				-- kotlin = { "ktfmt" }, -- Bruker LSP (kotlin.nvim) i stedet
+				kotlin = { lsp_format = "prefer" },
 				python = { "black" },
 			},
 			format_on_save = function(bufnr)
