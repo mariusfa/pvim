@@ -8,8 +8,12 @@ return {
 		{ "folke/trouble.nvim", opts = {} },
 	},
 	config = function()
-		-- Sett KOTLIN_LSP_DIR til manuell installasjon
-		vim.env.KOTLIN_LSP_DIR = vim.fn.expand("~/opt/kotlin-lsp")
+		-- Finn kotlin-lsp fra PATH og utled KOTLIN_LSP_DIR
+		local kotlin_lsp_bin = vim.fn.exepath("kotlin-lsp")
+		if kotlin_lsp_bin ~= "" then
+			local real_path = vim.fn.resolve(kotlin_lsp_bin)
+			vim.env.KOTLIN_LSP_DIR = vim.fn.fnamemodify(real_path, ":h")
+		end
 
 		require("kotlin").setup({
 			root_markers = {
