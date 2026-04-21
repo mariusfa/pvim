@@ -13,7 +13,7 @@ return { -- Highlight, edit, and navigate code
 			"tsx",
 			"html",
 			"java",
-			"kotlin",
+			-- "kotlin", -- Bruker kotlin.nvim i stedet
 			"python",
 		},
 		-- Autoinstall languages that are not installed
