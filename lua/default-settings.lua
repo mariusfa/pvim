@@ -55,6 +55,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Reload of changes outside of nvim
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "TermLeave" }, {
+	desc = "Reload files changed outside of nvim",
+	group = vim.api.nvim_create_augroup("checktime", { clear = true }),
+	callback = function()
+		-- checktime fails in cmdline-window (q:)
+		if vim.fn.getcmdwintype() == "" then
+			vim.cmd("checktime")
+		end
+	end,
+})
+
 -- autoformat
 vim.g.autoformat = true
 vim.api.nvim_create_user_command("FormatDisable", function()
